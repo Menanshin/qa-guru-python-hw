@@ -1,6 +1,5 @@
 import math
 import random
-import pytest
 from hamcrest import assert_that, equal_to, has_length, is_
 
 
@@ -16,7 +15,6 @@ def test_greeting():
     print("УСПЕШНО")
 
 
-
 def test_rectangle():
     a = 10
     b = 20
@@ -26,6 +24,8 @@ def test_rectangle():
 
     assert_that(perimeter, equal_to(60), "Ошибка в вычислении периметра")
     assert_that(area, equal_to(200), "Ошибка в вычислении площади")
+
+    print("УСПЕШНО")
 
 
 def test_circle():
@@ -37,12 +37,16 @@ def test_circle():
     assert_that(area, equal_to(1661.9025137490005), "Ошибка в вычислении площади круга")
     assert_that(length, equal_to(144.51326206513048), "Ошибка в вычислении длины окружности")
 
+    print("УСПЕШНО")
+
 
 def test_random_list():
     l = sorted(random.randint(1, 100) for _ in range(10))
 
     assert_that(l, has_length(10), "Ошибка в длине списка")
     assert_that(all(l[i] <= l[i + 1] for i in range(len(l) - 1)), is_(True), "Список не отсортирован")
+
+    print("УСПЕШНО")
 
 
 def test_unique_elements():
@@ -54,6 +58,8 @@ def test_unique_elements():
     assert_that(unique_l, equal_to(expected_list), "Ошибка в удалении дубликатов")
     assert_that(unique_l, has_length(10), "Ошибка в длине списка")
 
+    print("УСПЕШНО")
+
 
 def test_dicts():
     first = ["a", "b", "c", "d", "e"]
@@ -63,3 +69,5 @@ def test_dicts():
     assert_that(d, has_length(5), "Ошибка в длине словаря")
     assert_that(list(d.keys()), equal_to(first), "Ошибка в ключах словаря")
     assert_that(list(d.values()), equal_to(second), "Ошибка в значениях словаря")
+
+    print("УСПЕШНО")
