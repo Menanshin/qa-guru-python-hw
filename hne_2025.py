@@ -22,7 +22,7 @@ with open(filename, "w") as file:
     file.write(message)
 
 # Настраиваем репозиторий
-repo_path = "."  # Укажи путь к репо, если требуется
+repo_path = "tests"  # Укажи путь к репо, если требуется
 os.chdir(repo_path)
 
 # Добавляем файл в индекс
