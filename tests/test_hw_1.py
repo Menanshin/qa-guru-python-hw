@@ -1,3 +1,4 @@
+import allure
 from selene import *
 import random
 import string
@@ -11,12 +12,14 @@ random_text = generate_random_string()
 
 
 def test_google(set_browser_size):
-    browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
-    browser.element('[id="search"]').should(have.text(
-        'Selene - User-oriented Web UI browser tests in Python'))
+    with allure.step("Нажимаем на ссылку"):
+        browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
+    with allure.step("Проверяем наличие текста"):
+        browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
 
 
 def test_google_fail(set_browser_size):
-    browser.element('[name="q"]').should(be.blank).type(random_text).press_enter()
-    browser.element('[id="search"]').should(have.no.text(
-        'Selene - User-oriented Web UI browser tests in Python'))
+    with allure.step("Находим элемент"):
+        browser.element('[name="q"]').should(be.blank).type(random_text).press_enter()
+    with allure.step("Проверяем наличие текста"):
+        browser.element('[id="search"]').should(have.no.text('Selene - User-oriented Web UI browser tests in Python'))
