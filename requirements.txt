@@ -2,5 +2,9 @@ selene~=2.0.0rc9
 pytest
 PyHamcrest
 allure-pytest
+pydantic==2.4.0
+httpx
+
+
 
 

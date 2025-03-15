@@ -52,7 +52,7 @@ def test_find_suitable_user():
         ]
 
     with allure.step("Берем первый элемент из списка"):
-         suitable_users = next(user for user in users if user["name"] == "Olga")
+        suitable_users = next(user for user in users if user["name"] == "Olga")
 
     with allure.step("Проверяем корректность выбора"):
         assert suitable_users == {"name": "Olga", "age": 45}
@@ -124,7 +124,8 @@ def go_to_companyname_homepage(page_url):
 
 def find_registration_button_on_login_page(page_url, button_text):
     with allure.step("Переопределяем нахождение кнопки регистрации"):
-        actual_result = readable_function(find_registration_button_on_login_page, page_url=page_url, button_text=button_text)
+        actual_result = readable_function(find_registration_button_on_login_page, page_url=page_url,
+                                          button_text=button_text)
 
     with allure.step("Првоеряем наличие кнопки регистрации"):
         assert actual_result == "Find Registration Button On Login Page [page_url='https://companyname.com/login', button_text='Register']"

@@ -110,7 +110,6 @@ def test_random_list():
     with allure.step("Сортируем список"):
         expected_range = all(l[i] <= l[i + 1] for i in range(len(l) - 1))
 
-
     with allure.step("Ошибка длинны списка"):
         if expected_len != len_l:
             error_message_test_random_list_len = f"ОШИБКА! Ожидалась длина списка {expected_len}, но получена длина {len_l}"
