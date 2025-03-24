@@ -1,6 +1,5 @@
 import pytest
 from selene import browser
-
 from tests.models import Product, Cart
 
 

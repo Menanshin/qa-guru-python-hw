@@ -1,8 +1,6 @@
 import datetime
 import os
-
 from dotenv import load_dotenv
-
 from hw_data.test_data.users import User
 from hw_data.test_data.creditcards import CreditCard
 
